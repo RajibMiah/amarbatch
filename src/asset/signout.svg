@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="142.015" height="33" viewBox="0 0 142.015 33">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #6396fc;
+      }
+
+      .cls-2 {
+        font-size: 25px;
+        font-family: Roboto-Regular, Roboto;
+      }
+    </style>
+  </defs>
+  <g id="sign_out" data-name="sign out" transform="translate(-1750.985 -35)">
+    <path id="Icon_open-account-login" data-name="Icon open-account-login" className="cls-1" d="M13.5,0V4.5h18V27h-18v4.5H36V0ZM18,9v4.5H0V18H18v4.5l9-6.75Z" transform="translate(1750.985 36)"/>
+    <text id="Sign_Out-2" data-name="Sign Out" className="cls-2" transform="translate(1845 61)"><tspan x="-47.021" y="0">Sign Out</tspan></text>
+  </g>
+</svg>
