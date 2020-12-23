@@ -3,6 +3,7 @@ import React from 'react'
 import logo from '../../asset/logo.svg'
 import SignOut from '../../asset/signout.svg'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import {useHistory} from 'react-router-dom'
 
 const useStyle = makeStyles(theme=>({
 
@@ -23,6 +24,7 @@ const useStyle = makeStyles(theme=>({
 
 const Index = () => {
   const classes = useStyle()
+  const history  = useHistory()
   return (
    <Grid container>
      <Grid item xs>
@@ -32,12 +34,13 @@ const Index = () => {
           className = {classes.logoProp}
        />
      </Grid>
-     <Box component = 'div'  className = {classes.signout}>
+     <Box component = 'div'  className = {classes.signout} onClick = {()=>history.push('/signin')}>
        <ExitToAppIcon style = {{color:'#6396fc' , paddingTop:'5px'}} />
        <Typography
         variant = 'h6'
         style = {{fontWeight:'bold'}}
         color = 'secondary'
+        
 
        >
          sign up
