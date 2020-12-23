@@ -70,10 +70,10 @@ const Index = () => {
         </Typography>
           </Grid>
           <Grid item xs={12}>
-            <TextField id="outlined-basic" label="Class Id" variant="outlined" />
+            <TextField id="outlined-basic" label="Password" variant="outlined" />
           </Grid>
           <Grid item xs={12}>
-            <TextField id="outlined-basic" label="Password" variant="outlined" />
+            <TextField id="outlined-basic" label="Confirm Password" variant="outlined" />
           </Grid>
 
 
