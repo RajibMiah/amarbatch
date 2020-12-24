@@ -10,7 +10,6 @@ const useStyle = makeStyles(theme => ({
   root: {
     width: 'min-content',
     margin: "-15px",
-    // background: 'red',
     display: 'flex'
   },
   ulStyle: {
