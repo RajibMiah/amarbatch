@@ -10,6 +10,24 @@
   
   
 } 
+#Group_72{
+
+ 
+  animation: loveImg 5s linear infinite;
+}
+
+@keyframes loveImg {
+  0% {
+    transform: translateY(0px);
+   
+  }
+  50% {
+    transform: translateY(50px) ;
+  }
+  100% {
+    transform: translateY(0px) ;
+  }
+}
 
 @keyframes moveToLeft {
   0% {
