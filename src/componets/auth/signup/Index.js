@@ -2,8 +2,8 @@ import { Box, Button, Checkbox, Grid, makeStyles, TextField, Typography } from '
 import SigninSideBg from '../../../asset/SignInSideBg'
 import React from 'react'
 import logo from '../../../asset/logo.svg'
-import {useHistory} from 'react-router-dom'
-
+import { useHistory } from 'react-router-dom'
+import SideBg from '../../../asset/signupbg.png'
 const useStyle = makeStyles(theme => ({
 
   root: {
@@ -51,7 +51,12 @@ const Index = () => {
   return (
     <Grid container className={classes.root}>
       <Grid item xs={6}>
-        <SigninSideBg style= {{position:'absoulte', width:"500px"}}/>
+        {/* <SigninSideBg style= {{position:'absoulte', width:"500px"}}/> */}
+        <Box component='img'
+          src={SideBg}
+          alt='sideimg'
+          style={{ width: "650px", height: '650px' }}
+        />
       </Grid>
       <Grid item container xs={6} style={{ textAlign: 'center' }}>
         <Grid item xs={12}>
@@ -101,9 +106,9 @@ const Index = () => {
             <Grid item xs={6}>
               <Typography
                 variant='subtitle2'
-                style={{ fontWeight: 'bold', paddingBottom: '20px', textAlign:'end' ,cursor:'pointer'}}
+                style={{ fontWeight: 'bold', paddingBottom: '20px', textAlign: 'end', cursor: 'pointer' }}
                 color='secondary'
-                onClick = {()=>{history.push('/signin')}}
+                onClick={() => { history.push('/signin') }}
               >
                 already user
                  </Typography>

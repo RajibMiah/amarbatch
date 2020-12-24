@@ -1,16 +1,15 @@
-import { Grid, Box, Typography, makeStyles, Button } from '@material-ui/core'
+import { Grid, Box, Typography, makeStyles, Button, TextField } from '@material-ui/core'
 import React from 'react'
-import Cartoonimg from '../../asset/cartoon.svg'
+import Cartoonimg from '../../../asset/cartoon.svg'
 import { BiLocationPlus } from "react-icons/bi";
 import { FcBusinessman } from "react-icons/fc";
 import { FcPhone } from "react-icons/fc";
-import {useHistory} from 'react-router-dom'
 
 
 const useStyle = makeStyles(theme => ({
   root: {
     width: 'min-content',
-    margin: "20px",
+    margin: "-15px",
     // background: 'red',
     display: 'flex'
   },
@@ -19,24 +18,16 @@ const useStyle = makeStyles(theme => ({
     lineHeight: '38px',
     fontWeight: 'bold',
     padding: "0",
-    width: '12rem',
-
-
+    width: '30rem',
   },
-  btn: {
-    background: '#6396fc',
-    borderRadius: '25px',
-    fontWeight: 'bold',
-    color: 'white',
-    height: '40px',
-    width: '100px'
+  textField: {
+    width: '100%'
   }
 
 }))
 
 const Index = () => {
   const classes = useStyle()
-  const history = useHistory()
   return (
     <Grid container>
       <Grid item >
@@ -52,12 +43,12 @@ const Index = () => {
               color='secondary'
               style={{ fontWeight: 'bold', textAlign: 'left' }}
             >
-              Shahadin Mahamud
-          </Typography>
+              <TextField label='enter your name' />
+            </Typography>
             <Box component='ul' className={classes.ulStyle}>
-              <li> <i><FcBusinessman /></i> BSc hons in cse</li>
-              <li><i><FcPhone /></i>+88 01715646 45</li>
-              <li><i><BiLocationPlus style={{ color: "green" }} /></i>Amborkhana,sylhet</li>
+              <li> <i><FcBusinessman />  <TextField label='enter your study' /></i></li>
+              <li><i><FcPhone /></i>  <TextField label='inter your name' /></li>
+              <li><i><BiLocationPlus style={{ color: "green" }} /></i>  <TextField label='inter your name' /></li>
             </Box>
 
           </Box>
@@ -67,7 +58,7 @@ const Index = () => {
 
       <Grid item xs></Grid>
       <Grid item >
-        <Button className = {classes.btn} onClick = {()=>{history.push('/edit-profile')}}>
+        <Button style={{ background: '#6396fc', borderRadius: '25px', fontWeight: 'bold', color: 'white', height: '40px', width: '100px' }}>
           Edit
         </Button>
       </Grid>
@@ -80,14 +71,15 @@ const Index = () => {
           >
             Bio
         </Typography>
-          <Typography
-            variant='body1'
-            style={{ lineHeight: '25px', fontWeight: 'bold', paddingBottom: '10px' }}
-          >
-            The passage experienced a surge in popularity during the 1960s when Letraset used it on
-            their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
-            with their software. Today it's seen all around the web
-        </Typography>
+          <TextField
+            id="outlined-multiline-static"
+            label="Multiline"
+            multiline
+            rows="3"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+          />
         </Grid>
 
         <Grid item xs={12} className={classes.PTypo}>
@@ -98,14 +90,15 @@ const Index = () => {
           >
             Education
         </Typography>
-          <Typography
-            variant='body1'
-            style={{ lineHeight: '25px', fontWeight: 'bold', paddingBottom: '10px' }}
-          >
-            The passage experienced a surge in popularity during the 1960s when Letraset used it on
-            their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
-            with their software. Today it's seen all around the web
-        </Typography>
+          <TextField
+            id="outlined-multiline-static"
+            label="Multiline"
+            multiline
+            rows="3"
+            className={classes.textField}
+            margin="normal"
+            variant="outlined"
+          />
         </Grid>
 
 

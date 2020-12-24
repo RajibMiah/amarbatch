@@ -17,7 +17,7 @@ import Course from '../courses/CourseRoute'
 import Notification from '../notice/NoticeRoute'
 import Result from '../result/route'
 import Achivement from '../achivment/route'
-import Profile from '../profile/Index'
+import Profile from '../profile/Route'
 
 import TabPanel from './tabpanel/TabPanel'
 

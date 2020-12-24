@@ -43,7 +43,7 @@ const Index = () => {
         </Typography>
         <Typography
           variant='body1'
-          style={{ lineHeight: '25px', fontWeight: 'bold', paddingBottom: '10px' }}
+          style={{ lineHeight: '25px', paddingBottom: '10px' }}
         >
           The passage experienced a surge in popularity during the 1960s when Letraset used it on
           their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text

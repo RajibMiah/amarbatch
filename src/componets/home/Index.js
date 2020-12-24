@@ -18,7 +18,7 @@ const useStyle = makeStyles(theme => ({
   btn: {
     background: '#6396fc',
     borderRadius: '25px',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     textAlign: 'center',
     color: 'white'
   }

@@ -2,6 +2,7 @@ import { Box, Button, Checkbox, Grid, makeStyles, TextField, Typography } from '
 import SigninSideBg from '../../../asset/SignInSideBg'
 import React from 'react'
 import logo from '../../../asset/logo.svg'
+import SideBg from '../../../asset/signupbg.png'
 import { useHistory } from 'react-router-dom'
 
 const useStyle = makeStyles(theme => ({
@@ -49,9 +50,14 @@ const Index = () => {
   const classes = useStyle()
   const history = useHistory()
   return (
-    <Grid container className={classes.root}>
+    <Grid item container className={classes.root}>
       <Grid item xs={6}>
-        <SigninSideBg style={{ position: 'absoulte', width: "500px" }} />
+        {/* <SigninSideBg style={{ position: 'absoulte', width: "500px" }} /> */}
+        <Box component = 'img'
+          src = {SideBg}
+          alt = 'sideimg'
+          style = {{width:"650px", height:'650px'}}
+        />
       </Grid>
       <Grid item container xs={6} style={{ textAlign: 'center' }}>
         <Grid item xs={12}>
