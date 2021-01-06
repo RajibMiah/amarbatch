@@ -3,10 +3,7 @@ import React from 'react'
 import Header from '../../header/Index'
 import PdfDiv from '../../global/Pdfdiv'
 import BGStudent from '../../../asset/BGStudent'
-import Pdf from '../../../asset/PDF.pdf'
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import Slide from '@material-ui/core/Slide';
+import StudentData from '../../../asset/shadin_assets/studentdata/studentdata.xlsx'
 
 
 
@@ -15,6 +12,9 @@ const useStyle = makeStyles(theme => ({
   root: {
     backgroundImage: `url(${BGStudent})`,
     backgroundRepeat: 'no-repeat',
+    '& .MuiButton-root:hover':{
+      backgroundColor:'black'
+    }
 
   },
   diloag: {
@@ -43,21 +43,11 @@ const useStyle = makeStyles(theme => ({
 
 }))
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+
 
 const Index = () => {
   const classes = useStyle()
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+ 
 
   return (
     <Grid container className={classes.root}>
@@ -77,37 +67,13 @@ const Index = () => {
         </Grid>
 
         <Grid item  container>
-          <PdfDiv pdftitle='Section A' viewClick={handleClickOpen} />
-          <PdfDiv pdftitle='Section B' viewClick={handleClickOpen} />
-          <PdfDiv pdftitle='Section C' viewClick={handleClickOpen} />
-          <PdfDiv pdftitle='Section D' viewClick={handleClickOpen} />
-          <PdfDiv pdftitle='Section E' viewClick={handleClickOpen} />
-          <PdfDiv pdftitle='Section F' viewClick={handleClickOpen} />
+          <PdfDiv pdftitle='Section A'  Pdf = {StudentData} />
+          <PdfDiv pdftitle='Section B' />
+          <PdfDiv pdftitle='Section C'  />
+          <PdfDiv pdftitle='Section D'  />
+          <PdfDiv pdftitle='Section E'  />
+          <PdfDiv pdftitle='Section F' />
         </Grid>
-        
-      </Grid>
-
-      <Grid item xs={6}>
-        <Dialog
-          open={open}
-          TransitionComponent={Transition}
-          keepMounted
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-slide-title"
-          aria-describedby="alert-dialog-slide-description"
-
-          className={classes.diloag}
-        >
-          <DialogContent onClick={handleClose} >
-            <iframe
-              src={Pdf}
-              width="100%"
-              height="500px"
-            >
-            </iframe>
-          </DialogContent>
-
-        </Dialog>
       </Grid>
     </Grid>
   )

@@ -11,6 +11,22 @@ const theme = createMuiTheme({
       main: '#6396fc',
     },
   },
+  props: {
+    MuiButton: {
+      disableRipple: true,
+      disableFocusRipple : true,
+    },
+  },
+  overrides:{
+    MuiButton:{
+      root:{
+        color:'red'
+      },
+      '& .MuiButton-root:hover':{
+         backgroundColor:'red !important'
+      }
+    }
+  }
 });
 
 export default theme 

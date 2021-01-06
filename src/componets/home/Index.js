@@ -20,7 +20,10 @@ const useStyle = makeStyles(theme => ({
     borderRadius: '25px',
     // fontWeight: 'bold',
     textAlign: 'center',
-    color: 'white'
+    color: 'white',
+    '& .MuiButton-root:hover':{
+      backgroundColor:'black'
+    }
   }
 }))
 

@@ -42,6 +42,9 @@ const useStyle = makeStyles(theme => ({
     color: 'white',
     width: '40%',
     padding: "10px",
+    '& .MuiButton-root:hover':{
+      backgroundColor:'black'
+    }
     // margin: '20px'
   }
 }))
@@ -88,7 +91,7 @@ const Index = () => {
         </Grid>
       </Grid>
       <Grid item container xs = {6}>
-        <BGforget style = {{position:'absolute'}}/>
+        <BGforget style = {{position:'absolute', width:"37%"}}/>
       </Grid>
     </Grid>
   )

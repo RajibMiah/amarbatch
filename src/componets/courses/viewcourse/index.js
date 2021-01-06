@@ -40,21 +40,9 @@ const useStyle = makeStyles(theme => ({
   },
 
 }))
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
 
 const Index = () => {
   const classes = useStyle()
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12}>
@@ -73,35 +61,13 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle='summer day offer course 2020' viewClick={handleClickOpen} />
+          <PdfDiv pdftitle='summer day offer course 2020'  />
         </Grid>
         {/* <Grid item xs={12} container>
           <PdfDiv pdftitle ='Section B' />
         </Grid> */}
       </Grid>
 
-      <Grid item xs={12}>
-        <Dialog
-          open={open}
-          TransitionComponent={Transition}
-          keepMounted
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-slide-title"
-          aria-describedby="alert-dialog-slide-description"
-
-          className={classes.diloag}
-        >
-          <DialogContent onClick={handleClose} >
-            <iframe
-              src={Pdf}
-              width="100%"
-              height="500px"
-            >
-            </iframe>
-          </DialogContent>
-
-        </Dialog>
-      </Grid>
     </Grid>
   )
 }

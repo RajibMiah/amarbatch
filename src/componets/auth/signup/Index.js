@@ -42,7 +42,11 @@ const useStyle = makeStyles(theme => ({
     color: 'white',
     width: '40%',
     padding: "10px",
-    // margin: '20px'
+    '& .MuiButton-root':{
+      '::hover':{
+        backgroundColor:"black"
+      }
+    }
   }
 }))
 const Index = () => {

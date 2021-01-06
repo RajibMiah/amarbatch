@@ -16,7 +16,10 @@ const useStyle = makeStyles(theme => ({
     borderRadius: '25px',
     fontWeight: 'bold',
     color: 'white',
-    height: '40px'
+    height: '40px',
+    '& .MuiButton-root:hover':{
+      backgroundColor:'black'
+    }
   }
 }))
 

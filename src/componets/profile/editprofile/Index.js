@@ -10,7 +10,10 @@ const useStyle = makeStyles(theme => ({
   root: {
     width: 'min-content',
     margin: "-15px",
-    display: 'flex'
+    display: 'flex',
+    '& .MuiButton-root:hover':{
+      backgroundColor:'black'
+    }
   },
   ulStyle: {
     listStyle: 'none',

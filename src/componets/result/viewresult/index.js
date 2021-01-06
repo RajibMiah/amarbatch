@@ -3,17 +3,17 @@ import React from 'react'
 import Header from '../../header/Index'
 import PdfDiv from '../../global/Pdfdiv'
 import BGStudent from '../../../asset/BGStudent'
-import Pdf from '../../../asset/PDF.pdf'
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import Slide from '@material-ui/core/Slide';
+
 
 
 const useStyle = makeStyles(theme => ({
 
   root: {
     backgroundImage: `url(${BGStudent})`,
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
+    '& .MuiButton-root:hover':{
+      backgroundColor:'black'
+    }
   },
   diloag: {
     "& MuiDialogContent-root": {
@@ -40,21 +40,10 @@ const useStyle = makeStyles(theme => ({
   },
 
 }))
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+
 
 const Index = () => {
   const classes = useStyle()
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12}>
@@ -73,7 +62,7 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle='summer mid term result  2020' viewClick={handleClickOpen} />
+          <PdfDiv pdftitle='summer mid term result  2020' />
         </Grid>
 
         <Grid item xs={12} className={classes.PTypo}>
@@ -87,31 +76,8 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle='summer final result  2020' viewClick={handleClickOpen} />
+          <PdfDiv pdftitle='summer final result  2020' />
         </Grid>
-      </Grid>
-
-      <Grid item xs={6}>
-        <Dialog
-          open={open}
-          TransitionComponent={Transition}
-          keepMounted
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-slide-title"
-          aria-describedby="alert-dialog-slide-description"
-
-          className={classes.diloag}
-        >
-          <DialogContent onClick={handleClose} >
-            <iframe
-              src={Pdf}
-              width="100%"
-              height="500px"
-            >
-            </iframe>
-          </DialogContent>
-
-        </Dialog>
       </Grid>
     </Grid>
   )
