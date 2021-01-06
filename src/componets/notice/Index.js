@@ -42,7 +42,7 @@ const Index = () => {
           style={{ fontWeight: 'bold', paddingBottom: '20px' }}
           color='secondary'
         >
-          COURSES
+          Notice
         </Typography>
         <Typography
           variant='body1'

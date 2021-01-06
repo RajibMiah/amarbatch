@@ -3,6 +3,8 @@ import React from 'react'
 import Header from '../../header/Index'
 import PdfDiv from '../../global/Pdfdiv'
 import BGStudent from '../../../asset/BGStudent'
+import FinalResult from '../../../asset/shadin_assets/finaleresult/FinalResult.pdf'
+import MidResult from '../../../asset/shadin_assets/midresult/midResult.pdf'
 
 
 
@@ -62,7 +64,7 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle='summer mid term result  2020' />
+          <PdfDiv pdftitle='summer mid term result  2020' Pdf = {FinalResult} />
         </Grid>
 
         <Grid item xs={12} className={classes.PTypo}>
@@ -76,7 +78,7 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle='summer final result  2020' />
+          <PdfDiv pdftitle='summer final result  2020' Pdf = {MidResult} />
         </Grid>
       </Grid>
     </Grid>

@@ -3,10 +3,7 @@ import React from 'react'
 import Header from '../../header/Index'
 import PdfDiv from '../../global/Pdfdiv'
 import BGStudent from '../../../asset/BGStudent'
-import Pdf from '../../../asset/PDF.pdf'
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import Slide from '@material-ui/core/Slide';
+import offerCourse from '../../../asset/shadin_assets/offerdcourse/OfferCourse.pdf'
 
 
 const useStyle = makeStyles(theme => ({
@@ -61,7 +58,7 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle='summer day offer course 2020'  />
+          <PdfDiv pdftitle='summer day offer course 2020'  Pdf = {offerCourse} />
         </Grid>
         {/* <Grid item xs={12} container>
           <PdfDiv pdftitle ='Section B' />

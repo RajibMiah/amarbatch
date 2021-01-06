@@ -3,10 +3,8 @@ import React from 'react'
 import Header from '../../header/Index'
 import PdfDiv from '../../global/Pdfdiv'
 import BGStudent from '../../../asset/BGStudent'
-import Pdf from '../../../asset/PDF.pdf'
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import Slide from '@material-ui/core/Slide';
+import ClassNotice from '../../../asset/shadin_assets/classnotice/CourseNotice.pdf'
+import AcadamicNotice from '../../../asset/shadin_assets/academicnotice/acadamicNotice.pdf'
 
 
 const useStyle = makeStyles(theme => ({
@@ -65,7 +63,7 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle = 'programming class test'/>
+          <PdfDiv pdftitle = 'programming class test' Pdf = {ClassNotice}/>
         </Grid>
 
         <Grid item xs={12} className={classes.PTypo}>
@@ -79,7 +77,7 @@ const Index = () => {
         </Grid>
 
         <Grid item xs={12} container>
-          <PdfDiv pdftitle = 'University Notice' />
+          <PdfDiv pdftitle = 'University Notice' Pdf = {AcadamicNotice} />
         </Grid>
       </Grid>
     </Grid>
