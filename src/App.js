@@ -14,6 +14,7 @@ import ForgetPassword from './componets/auth/forgetpassword/Index'
 const App = () => {
   return (
     <Switch>
+      
       <Route exact path="/signin" render={(props) => <SignIn {...props}/> } />
       <Route exact path="/signup" render={(props) => <SignUp {...props}/> }/>
       <Route exact path="/forgetpassword" render={(props) => <ForgetPassword {...props}/> } />
