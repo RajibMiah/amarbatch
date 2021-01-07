@@ -9,7 +9,7 @@ const useStyle = makeStyles(theme => ({
 
 }))
 
-const CRProfile = ({ src  , bgColor}) => {
+const CRProfile = ({ src  , bgColor , crname}) => {
   const classes = useStyle()
   return (
       <Box component='div' className={classes.root}>
@@ -23,7 +23,7 @@ const CRProfile = ({ src  , bgColor}) => {
           color='secondary'
           style={{ fontWeight: 'bold', textAlign: 'center' }}
         >
-          shahadin
+         {crname}
       </Typography>
       </Box>
   )

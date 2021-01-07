@@ -30,7 +30,7 @@ const AchivementCard = ({img , achivHead , achivTitle}) => {
           <img
             src={img}
             alt='img'
-            style={{ width: "70%" }}
+            style={{ width: "70%", height:'105px' }}
           />
         </Box>
         <Grid item xs={8} className={classes.PTypo}>

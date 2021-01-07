@@ -61,7 +61,7 @@ const Pdfdiv = ({ pdftitle, viewClick, Pdf }) => {
               </Typography>
             </Box>
 
-            <Box component='div' style={{ display: 'flex', paddingTop: '30px', paddingLeft: '10px' }}>
+            <Box component='div' style={{ display: 'flex', paddingTop: '30px', paddingLeft: '10px', width: 'max-content' }}>
               <Button disableFocusRipple className={classes.btn} onClick={handleClickOpen}>
                 View Pdf
             </Button>

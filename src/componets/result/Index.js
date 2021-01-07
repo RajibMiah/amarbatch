@@ -46,9 +46,7 @@ const Index = () => {
           variant='body1'
           style={{ lineHeight: '25px', fontWeight: 'bold', paddingBottom: '10px' }}
         >
-          The passage experienced a surge in popularity during the 1960s when Letraset used it on
-          their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
-          with their software. Today it's seen all around the web
+         Success means having the courage, the determination, and the will to become the person you believe you were meant to be. Hope you will pass the exam, Good Luck.
         </Typography>
         <Button className = {classes.btn} onClick = {()=>{history.push('view-result')}}>
           View Result

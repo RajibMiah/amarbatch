@@ -47,10 +47,10 @@ const Index = () => {
           variant='h6'
           style={{ lineHeight: '25px' }}
         >
-          The passage experienced a surge in popularity during the 1960s when Letraset used it on
-          their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
-          with their software. Today it's seen all around the web; on templates, websites, and stock
-          designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.
+          As said by Edward Young, ‘procrastination is the thief of time’. The more the delay made to begin, the more time wasted. The secret to getting ahead is getting started. Set a timetable, adhere to it strictly and you will find things falling in place.
+          Welcome to our batch website.Here you can find the important files and other important things about our batch.
+          Be Our Guest.
+          
         </Typography>
       </Grid>
 
@@ -69,17 +69,18 @@ const Index = () => {
         </Grid>
         <Grid item xs={12} container justify='center'>
           <Grid item >
-            <CRProfile src={Cartoonimg} bgColor='brown' />
+            <CRProfile src={Cartoonimg} crname = 'Toha' bgColor='brown' />
           </Grid>
           <Grid item  >
-            <CRProfile src={Cartoonimg} bgColor='#5FBEFF' />
+            <CRProfile src={Cartoonimg} crname = 'Atrazul' bgColor='#5FBEFF' />
           </Grid>
           <Grid item>
-            <CRProfile src={Cartoonimg} bgColor='brown' />
+            <CRProfile src={Cartoonimg}crname = 'Shishir ' bgColor='brown' />
           </Grid>
           <Grid item >
-            <CRProfile src={Cartoonimg} bgColor='#5FBEFF' />
+            <CRProfile src={Cartoonimg} crname = 'Rizvi' bgColor='#5FBEFF' />
           </Grid>
+          
 
         </Grid>
         <Grid item xs={12} container justify='center'>

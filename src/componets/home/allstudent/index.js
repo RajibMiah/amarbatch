@@ -3,17 +3,15 @@ import React from 'react'
 import Header from '../../header/Index'
 import PdfDiv from '../../global/Pdfdiv'
 import BGStudent from '../../../asset/BGStudent'
-import StudentData from '../../../asset/shadin_assets/studentdata/studentdata.xlsx'
-
-
+import StudentData from '../../../asset/shadin_assets/studentdata/studentdata.pdf'
 
 const useStyle = makeStyles(theme => ({
 
   root: {
     backgroundImage: `url(${BGStudent})`,
     backgroundRepeat: 'no-repeat',
-    '& .MuiButton-root:hover':{
-      backgroundColor:'black'
+    '& .MuiButton-root:hover': {
+      backgroundColor: 'black'
     }
 
   },
@@ -47,7 +45,7 @@ const useStyle = makeStyles(theme => ({
 
 const Index = () => {
   const classes = useStyle()
- 
+
 
   return (
     <Grid container className={classes.root}>
@@ -66,13 +64,25 @@ const Index = () => {
         </Typography>
         </Grid>
 
-        <Grid item  container>
-          <PdfDiv pdftitle='Section A'  Pdf = {StudentData} />
-          <PdfDiv pdftitle='Section B' />
-          <PdfDiv pdftitle='Section C'  />
-          <PdfDiv pdftitle='Section D'  />
-          <PdfDiv pdftitle='Section E'  />
-          <PdfDiv pdftitle='Section F' />
+        <Grid item container >
+          <Grid item xs={4}>
+            <PdfDiv pdftitle='Section A' Pdf = {StudentData} />
+          </Grid>
+          <Grid item xs={4}>
+            <PdfDiv pdftitle='Section B'  Pdf = {StudentData} />
+          </Grid>
+          <Grid item xs={4}>
+            <PdfDiv pdftitle='Section C'  Pdf = {StudentData} />
+          </Grid>
+          <Grid item xs={4}>
+            <PdfDiv pdftitle='Section D'  Pdf = {StudentData} />
+          </Grid>
+          <Grid item xs={4}>
+            <PdfDiv pdftitle='Section E'  Pdf = {StudentData} />
+          </Grid>
+          <Grid item xs={4}>
+            <PdfDiv pdftitle='Section F' Pdf = {StudentData} />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

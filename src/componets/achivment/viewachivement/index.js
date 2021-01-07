@@ -6,7 +6,10 @@ import BGStudent from '../../../asset/BGStudent'
 import Pdf from '../../../asset/PDF.pdf'
 import AchivementsImg from '../../../asset/achivement.jpg'
 import AchivementCard from './achivementcard/AchivementCard'
-
+import Nasa from '../../../asset/shadin_assets/achivement/nasa.jpg'
+import img1 from '../../../asset/shadin_assets/achivement/IMG_396.jpg'
+import img2 from '../../../asset/shadin_assets/achivement/IMG_518.jpg'
+import img3 from '../../../asset/shadin_assets/achivement/Low-res-IMG_4067.jpg'
 
 const useStyle = makeStyles(theme => ({
 
@@ -49,37 +52,37 @@ const Index = () => {
 
       <Grid item container spacing = {3}>
         <AchivementCard
-          img={AchivementsImg}
+          img= {Nasa}
           achivHead='VR web'
           achivTitle='nasa space app challange'
         />
          <AchivementCard
-          img={AchivementsImg}
+          img={img1}
           achivHead='VR web'
           achivTitle='nasa space app challange'
         />
          <AchivementCard
-          img={AchivementsImg}
+          img={img2}
           achivHead='VR web'
           achivTitle='nasa space app challange'
         />
          <AchivementCard
-          img={AchivementsImg}
+          img={img3}
           achivHead='VR web'
           achivTitle='nasa space app challange'
         />
          <AchivementCard
-          img={AchivementsImg}
+          img={img1}
           achivHead='VR web'
           achivTitle='nasa space app challange'
         />
          <AchivementCard
-          img={AchivementsImg}
+          img={img2}
           achivHead='VR web'
           achivTitle='nasa space app challange'
         />
          <AchivementCard
-          img={AchivementsImg}
+          img={img3}
           achivHead='VR web'
           achivTitle='nasa space app challange'
         />

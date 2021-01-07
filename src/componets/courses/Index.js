@@ -48,10 +48,7 @@ const Index = () => {
           variant='body1'
           style={{ lineHeight: '25px', paddingBottom: '10px' }}
         >
-          The passage experienced a surge in popularity during the 1960s when Letraset used it on
-          their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
-          with their software. Today it's seen all around the web; on templates, websites, and stock
-          designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.
+         As rightly said, where there is a will, there is a way!’ Any achievement is impossible without dedication. So, if you need to achieve your goals, along with hard work, you will need to be dedicated all throughout. Here you can find course details .
         </Typography>
         <Button className = {classes.btn} onClick = {()=>{history.push('/details')}}>
           View Details
