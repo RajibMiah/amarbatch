@@ -94,7 +94,7 @@ const Index = () => {
   const handleSignInBtn = (e) => {
     e.preventDefault()
     setOpen(true);
-    if (values.classId == '171-115-039' && values.password == '12345') {
+    if (values.classId == '171-115-220' && values.password == '12345') {
       setOpen(true);
       setIsSignIn(true)
       setTimeout(() => {
