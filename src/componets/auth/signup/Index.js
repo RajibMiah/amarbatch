@@ -86,29 +86,62 @@ const Index = () => {
             <Grid item xs={12}>
               <TextField
                 id="outlined-basic"
-                label="user name"
+                label="User Name"
                 name ='userName'
                 variant="outlined"
-                // control={control}
                 defaultValue=""
                 inputRef={register}
-                // onChange = {handle}
               />
             </Grid>
             <Grid item xs={12}>
-              <TextField id="outlined-basic" label="Email" variant="outlined" />
+            <TextField
+                id="outlined-basic"
+                label="Email"
+                name ='email'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
             </Grid>
             <Grid item xs={12}>
-              <TextField id="outlined-basic" label="Phone Number" variant="outlined" />
+              <TextField
+                id="outlined-basic"
+                label="Phone Number"
+                name ='phoneNo'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
             </Grid>
             <Grid item xs={12}>
-              <TextField id="outlined-basic" label="Class Id" variant="outlined" />
+            <TextField
+                id="outlined-basic"
+                label="Class Id"
+                name ='classId'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
             </Grid>
             <Grid item xs={12}>
-              <TextField id="outlined-basic" label="Password" variant="outlined" />
+            <TextField
+                id="outlined-basic"
+                label="Password"
+                name ='password'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
             </Grid>
             <Grid item xs={12}>
-              <TextField id="outlined-basic" label="Confirm Password" variant="outlined" />
+            <TextField
+                id="outlined-basic"
+                label="Confirm Password"
+                name ='confirmPassword'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
             </Grid>
             <Grid xs={6} item container style={{ margin: '0 auto' }}>
               <Box style={{ display: 'flex' }}>
