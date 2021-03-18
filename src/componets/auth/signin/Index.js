@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Box, Button, Checkbox, Grid, makeStyles, TextField, Typography } from '@material-ui/core'
-import SigninSideBg from '../../../asset/SignInSideBg'
+// import SigninSideBg from '../../../asset/SignInSideBg'
 import logo from '../../../asset/logo.svg'
 import SideBg from '../../../asset/signupbg.png'
 import Snackbar from '@material-ui/core/Snackbar';

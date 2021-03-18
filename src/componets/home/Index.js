@@ -86,7 +86,7 @@ const Index = () => {
         <Grid item xs={12} container justify='center'>
           <Button className={classes.btn} onClick = {()=>{history.push('/allstudent')}}>
             All Student
-            </Button>
+          </Button>
         </Grid>
       </Grid>
 
