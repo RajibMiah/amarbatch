@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Button, Checkbox, Grid, makeStyles, TextField, Typography } from '@material-ui/core'
 // import SigninSideBg from '../../../asset/SignInSideBg'
+import { useForm } from "react-hook-form";
 import logo from '../../../asset/logo.svg'
 import SideBg from '../../../asset/signupbg.png'
 import Snackbar from '@material-ui/core/Snackbar';
@@ -72,6 +73,8 @@ const Index = () => {
   const [isSignIn, setIsSignIn] = useState(false)
   const [values, setValues] = useState({ classId: '', password: '' })
   const [open, setOpen] = React.useState(false);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => console.log("data", data);
 
   const handleClick = () => {
     setOpen(true);
@@ -138,10 +141,24 @@ const Index = () => {
         </Typography>
           </Grid>
           <Grid item xs={12}>
-            <TextField id="outlined-basic" label="Class Id" name='classId' onChange={setInputs} variant="outlined" />
+            <TextField
+              id="outlined-basic"
+              placeholder="class id"
+              name='classId'
+              variant="outlined"
+              defaultValue=""
+              inputRef={register}
+            />
           </Grid>
           <Grid item xs={12}>
-            <TextField id="outlined-basic" label="Password" name='password' onChange={setInputs} variant="outlined" />
+            <TextField
+              id="outlined-basic"
+              placeholder="Password"
+              name='password'
+              variant="outlined"
+              defaultValue=""
+              inputRef={register}
+            />
           </Grid>
 
           <Grid xs={7} item container style={{ margin: '0 auto', marginBottom: '10px' }}>
@@ -154,7 +171,7 @@ const Index = () => {
                   color='secondary'
                 >
                   keep me sign in
-                 </Typography>
+                </Typography>
               </Box>
 
             </Grid>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Button, Checkbox, Grid, makeStyles, TextField, Typography } from '@material-ui/core'
-import SigninSideBg from '../../../asset/SignInSideBg'
-import { useForm, Controller } from "react-hook-form";
+// import SigninSideBg from '../../../asset/SignInSideBg'
+import { useForm } from "react-hook-form";
 import logo from '../../../asset/logo.svg'
 import { useHistory } from 'react-router-dom'
 import SideBg from '../../../asset/signupbg.png'
@@ -45,7 +45,7 @@ const useStyle = makeStyles(theme => ({
     padding: "10px",
     '& .MuiButton-root': {
       '::hover': {
-        backgroundColor: "black"
+        backgroundColor: "black !important" 
       }
     }
   }
@@ -53,8 +53,8 @@ const useStyle = makeStyles(theme => ({
 const Index = () => {
   const classes = useStyle()
   const history = useHistory()
-  const { register, handleSubmit  } = useForm();
-  const onSubmit = data => console.log("data",data);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => console.log("data", data);
 
   return (
     <Grid container className={classes.root}>
@@ -86,18 +86,8 @@ const Index = () => {
             <Grid item xs={12}>
               <TextField
                 id="outlined-basic"
-                label="User Name"
-                name ='userName'
-                variant="outlined"
-                defaultValue=""
-                inputRef={register}
-              />
-            </Grid>
-            <Grid item xs={12}>
-            <TextField
-                id="outlined-basic"
-                label="Email"
-                name ='email'
+                placeholder="User Name"
+                name='userName'
                 variant="outlined"
                 defaultValue=""
                 inputRef={register}
@@ -106,38 +96,48 @@ const Index = () => {
             <Grid item xs={12}>
               <TextField
                 id="outlined-basic"
-                label="Phone Number"
-                name ='phoneNo'
+                placeholder="Email"
+                name='email'
                 variant="outlined"
                 defaultValue=""
                 inputRef={register}
               />
             </Grid>
             <Grid item xs={12}>
-            <TextField
+              <TextField
                 id="outlined-basic"
-                label="Class Id"
-                name ='classId'
+                placeholder="Phone Number"
+                name='phoneNo'
                 variant="outlined"
                 defaultValue=""
                 inputRef={register}
               />
             </Grid>
             <Grid item xs={12}>
-            <TextField
+              <TextField
                 id="outlined-basic"
-                label="Password"
-                name ='password'
+                placeholder="Class Id"
+                name='classId'
                 variant="outlined"
                 defaultValue=""
                 inputRef={register}
               />
             </Grid>
             <Grid item xs={12}>
-            <TextField
+              <TextField
                 id="outlined-basic"
-                label="Confirm Password"
-                name ='confirmPassword'
+                placeholder="Password"
+                name='password'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                id="outlined-basic"
+                placeholder="Confirm Password"
+                name='confirmPassword'
                 variant="outlined"
                 defaultValue=""
                 inputRef={register}
@@ -167,9 +167,9 @@ const Index = () => {
 
             </Grid>
             <Grid item xs={12}>
-              {/* onClick={() => { history.push() }} */}
               <Button
-               type="submit"
+                type="submit"
+                color='primary'
                 className={classes.btn}
               >
                 sign up
