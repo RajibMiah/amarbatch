@@ -144,7 +144,7 @@ const Index = () => {
               />
             </Grid>
             <Grid xs={6} item container style={{ margin: '0 auto' }}>
-              <Box style={{ display: 'flex' }}>
+              <Grid item xs = {5} style={{ display: 'flex' }}>
                 <Checkbox inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} style={{ padding: '0px' }} />
                 <Typography
                   variant='subtitle2'
@@ -152,17 +152,18 @@ const Index = () => {
                   color='secondary'
                 >
                   keep me sign in
-              </Typography>
-              </Box>
-              <Grid item xs={6}>
+                </Typography>
+              </Grid>
+              <Grid itemx xs />
+              <Grid item xs={5}>
                 <Typography
                   variant='subtitle2'
-                  style={{ fontWeight: 'bold', paddingBottom: '20px', textAlign: 'end', cursor: 'pointer' }}
+                  style={{ fontWeight: 'bold', textAlign: 'end', cursor: 'pointer' }}
                   color='secondary'
                   onClick={() => { history.push('/signin') }}
                 >
                   already user
-              </Typography>
+                </Typography>
               </Grid>
 
             </Grid>

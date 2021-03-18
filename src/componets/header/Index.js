@@ -15,7 +15,7 @@ const useStyle = makeStyles(theme=>({
   },
   signout:{
     position: 'absolute',
-    right: '12px',
+    right: '4rem',
     top: '-28px',
     cursor:'pointer',
     display:'flex'

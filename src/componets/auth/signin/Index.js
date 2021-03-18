@@ -31,10 +31,18 @@ const useStyle = makeStyles(theme => ({
       top: '-9px'
     }
   },
-
+  sideImage: {
+    width: "650px",
+    height: '650px'
+  },
   logoProp: {
     height: '80px',
     paddingTop: '50px'
+  },
+  logoContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   signout: {
     position: 'absolute',
@@ -54,6 +62,21 @@ const useStyle = makeStyles(theme => ({
     '& .MuiButton-root:hover': {
       backgroundColor: 'black'
     }
+  },
+  keepMeTag: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    paddingBottom: '20px'
+  },
+  forgetStyle: {
+    fontWeight: 'bold',
+    paddingBottom: '20px',
+    cursor: 'pointer'
+  },
+  newUserLink: {
+    fontWeight: 'bold',
+    textAlign: 'end',
+    cursor: 'pointer'
   }
 }))
 
@@ -73,8 +96,7 @@ const Index = () => {
   const [isSignIn, setIsSignIn] = useState(false)
   const [values, setValues] = useState({ classId: '', password: '' })
   const [open, setOpen] = React.useState(false);
-  const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log("data", data);
+
 
   const handleClick = () => {
     setOpen(true);
@@ -111,18 +133,21 @@ const Index = () => {
 
   }
   const history = useHistory()
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => console.log("data", data);
+
   return (
     <Grid item container className={classes.root}>
-      <Grid item xs={6} >
-        {/* <SigninSideBg style={{ position: 'absoulte', width: "500px" }} /> */}
+      <Grid item xs={6}  >
         <Box component='img'
           src={SideBg}
           alt='sideimg'
-          style={{ width: "650px", height: '650px' }}
+          className={classes.sideImage}
         />
       </Grid>
       <Grid item container xs={6} style={{ textAlign: 'center' }}>
-        <Grid item xs={12}>
+        <Grid item xs={12} className={classes.logoContainer}>
           <img
             src={logo}
             alt='logo'
@@ -130,97 +155,102 @@ const Index = () => {
           />
 
         </Grid>
-        <Grid item container spacing={0}>
-          <Grid item xs={12}>
-            <Typography
-              variant='h6'
-              style={{ fontWeight: 'bold', paddingBottom: '20px' }}
-              color='secondary'
-            >
-              Sign In Account
-        </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              id="outlined-basic"
-              placeholder="class id"
-              name='classId'
-              variant="outlined"
-              defaultValue=""
-              inputRef={register}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              id="outlined-basic"
-              placeholder="Password"
-              name='password'
-              variant="outlined"
-              defaultValue=""
-              inputRef={register}
-            />
-          </Grid>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Grid item container spacing={0}>
+            <Grid item xs={12}>
+              <Typography
+                variant='h6'
+                style={{ fontWeight: 'bold', paddingBottom: '20px' }}
+                color='secondary'
+              >
+                Sign In Account
+            </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                id="outlined-basic"
+                placeholder="class id"
+                name='classId'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                id="outlined-basic"
+                placeholder="Password"
+                name='password'
+                variant="outlined"
+                defaultValue=""
+                inputRef={register}
+              />
+            </Grid>
 
-          <Grid xs={7} item container style={{ margin: '0 auto', marginBottom: '10px' }}>
-            <Grid item xs={4}>
-              <Box style={{ display: 'flex' }}>
+            <Grid xs={7} item container style={{ margin: '1rem auto' }}>
+              <Grid item xs={4} style={{ display: 'flex' }}>
+
                 <Checkbox inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} style={{ padding: '0px' }} />
                 <Typography
                   variant='subtitle2'
-                  style={{ fontWeight: 'bold', paddingBottom: '20px' }}
+                  className={classes.keepMeTag}
                   color='secondary'
                 >
                   keep me sign in
                 </Typography>
-              </Box>
+
+
+              </Grid>
+              <Grid item xs={4}>
+                <Typography
+                  variant='subtitle2'
+                  className={classes.forgetStyle}
+                  color='secondary'
+                  onClick={() => { history.push('/forgetpassword') }}
+                >
+                  Forget Password
+              </Typography>
+              </Grid>
+              <Grid item xs={4}>
+                <Typography
+                  variant='subtitle2'
+                  className={classes.newUserLink}
+                  color='secondary'
+                  onClick={() => { history.push('/signup') }}
+                >
+                  New user
+              </Typography>
+              </Grid>
+
 
             </Grid>
-            <Grid item xs={4}>
-              <Typography
-                variant='subtitle2'
-                style={{ fontWeight: 'bold', paddingBottom: '20px', cursor: 'pointer' }}
-                color='secondary'
-                onClick={() => { history.push('/forgetpassword') }}
+            <Grid item xs={12}>
+              <Button
+                type="submit"
+                color='primary'
+                className={classes.btn}
+                // onClick={handleSignInBtn}
               >
-                Forget Password
-                 </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <Typography
-                variant='subtitle2'
-                style={{ fontWeight: 'bold', paddingBottom: '20px', cursor: 'pointer' }}
-                color='secondary'
-                onClick={() => { history.push('/signup') }}
-              >
-                New user
-                 </Typography>
-            </Grid>
-
-
-          </Grid>
-          <Grid item xs={12}>
-            {/* onClick={() => { history.push() }} */}
-            <Button className={classes.btn} onClick={handleSignInBtn}>
-              sign in
+                sign in
             </Button>
-          </Grid>
-          {
-            (isSignIn) ?
-              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="success">
-                  You are sign in . Redireact to home page
+            </Grid>
+            {
+              (isSignIn) ?
+                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                  <Alert onClose={handleClose} severity="success">
+                    You are sign in . Redireact to home page
                 </Alert>
-              </Snackbar> :
-              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                <Alert onClose={handleClose} severity="error">
-                  Incorrect classId or Password
+                </Snackbar> :
+                <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                  <Alert onClose={handleClose} severity="error">
+                    Incorrect classId or Password
                </Alert>
-              </Snackbar>
-          }
-
-
-        </Grid>
+                </Snackbar>
+            }
+          </Grid>
+        </form>
       </Grid>
+
     </Grid>
   )
 }
