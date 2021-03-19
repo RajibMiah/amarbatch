@@ -1,10 +1,13 @@
-import React from 'react'
-import { Box, Button, Checkbox, Grid, makeStyles, TextField, Typography } from '@material-ui/core'
+import React, { useState, useEffect } from 'react'
+import { Box, Button, Checkbox, Grid, makeStyles, Snackbar, TextField, Typography } from '@material-ui/core'
+// var  localStorage = require('localStorage');
 // import SigninSideBg from '../../../asset/SignInSideBg'
 import { useForm } from "react-hook-form";
 import logo from '../../../asset/logo.svg'
 import { useHistory } from 'react-router-dom'
 import SideBg from '../../../asset/signupbg.png'
+import axios from 'axios';
+import Alert from '@material-ui/lab/Alert';
 const useStyle = makeStyles(theme => ({
 
   root: {
@@ -45,7 +48,7 @@ const useStyle = makeStyles(theme => ({
     padding: "10px",
     '& .MuiButton-root': {
       '::hover': {
-        backgroundColor: "black !important" 
+        backgroundColor: "black !important"
       }
     }
   }
@@ -53,8 +56,52 @@ const useStyle = makeStyles(theme => ({
 const Index = () => {
   const classes = useStyle()
   const history = useHistory()
+  const [open, setOpen] = useState(false);
+  const [severity , setSeverity] = useState()
+  const [message, setMessage] = useState()
+  // const [values, setValues] = useState({ classId: '', password: '' })
   const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log("data", data);
+  const onSubmit = data => {
+    axios({
+      method: 'POST',
+      url: 'http://localhost:4000/user/signup',
+      data: data
+    })
+      .then(({ data }) => {
+        console.log("data", data)
+        if (data.code === 'SUCCESS') {
+          localStorage.setItem('authToken', 'Barrer ' + data.token);
+          setSeverity('success')
+          setMessage("You are sign in . Redireact to home page")
+          setOpen(true);
+          setTimeout(() => {
+            history.push('/')
+          }, 2000);
+
+        }
+      })
+      .catch(err => {
+        setMessage("error is ocopide ")
+        setSeverity('error')
+        setOpen(true);
+      })
+  }
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+
+  useEffect(() => {
+
+    return () => {
+
+    }
+  }, [])
 
   return (
     <Grid container className={classes.root}>
@@ -144,7 +191,7 @@ const Index = () => {
               />
             </Grid>
             <Grid xs={6} item container style={{ margin: '0 auto' }}>
-              <Grid item xs = {5} style={{ display: 'flex' }}>
+              <Grid item xs={5} style={{ display: 'flex' }}>
                 <Checkbox inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} style={{ padding: '0px' }} />
                 <Typography
                   variant='subtitle2'
@@ -179,6 +226,11 @@ const Index = () => {
           </Grid>
         </form>
       </Grid>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={severity}>
+          {message}
+        </Alert>
+      </Snackbar>
     </Grid>
   )
 }

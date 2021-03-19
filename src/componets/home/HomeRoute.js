@@ -4,8 +4,6 @@ import ProtectedRoute from 'react-protected-route-component'
 import AllStudent from './allstudent/index'
 import {
   Switch,
-  Route,
-  Link,
   Redirect,
 } from "react-router-dom";
 
