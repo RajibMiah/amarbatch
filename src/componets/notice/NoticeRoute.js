@@ -5,16 +5,40 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import ProtectedRoute from 'react-protected-route-component';
 
 const HomeRoute = () => {
   return (
     <Switch>
-      <Route exact path="/notice">
-        <Notice />
-      </Route>
-      <Route path="/noticedetails">
-        <ViewDetails/>
-      </Route>
+      <ProtectedRoute
+        path="/notice"
+        redirectRoute="/signin"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() => <Notice />}
+        exact
+      />
+
+      <ProtectedRoute
+        path="/noticedetails"
+        redirectRoute="/signin"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() => <ViewDetails />}
+        exact
+      />
     </Switch>
   )
 }

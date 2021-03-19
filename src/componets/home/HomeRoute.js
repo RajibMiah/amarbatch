@@ -1,5 +1,6 @@
 import React from 'react'
 import Home from './Index'
+import ProtectedRoute from 'react-protected-route-component'
 import AllStudent from './allstudent/index'
 import {
   Switch,
@@ -11,12 +12,34 @@ import {
 const HomeRoute = () => {
   return (
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route path="/allstudent">
-        <AllStudent/>
-      </Route>
+      <ProtectedRoute
+        path="/"
+        redirectRoute="/signin"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() => <Home />}
+        exact
+      />
+      <ProtectedRoute
+        path="/allstudent"
+        redirectRoute="/login"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() => <AllStudent />}
+        exact
+      />
       <Redirect to="/" />
     </Switch>
   )

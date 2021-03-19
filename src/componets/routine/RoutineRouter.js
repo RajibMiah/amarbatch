@@ -7,16 +7,40 @@ import {
   Link,
   Redirect,
 } from "react-router-dom";
+import ProtectedRoute from 'react-protected-route-component';
 
 const HomeRoute = () => {
   return (
     <Switch>
-      <Route exact path="/routine">
-        <Routine/>
-      </Route>
-      <Route path="/schadule">
-        <Schadule/>
-      </Route>
+      <ProtectedRoute
+        path="/routine"
+        redirectRoute="/signin"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() => <Routine />}
+        exact
+      />
+      <ProtectedRoute
+        path="/schadule"
+        redirectRoute="/signin"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() => <Schadule />}
+        exact
+      />
+       <Redirect to="/" />
     </Switch>
   )
 }

@@ -3,18 +3,40 @@ import Result from './Index'
 import ViewResult from './viewresult/index'
 import {
   Switch,
-  Route,
 } from "react-router-dom";
+import ProtectedRoute from 'react-protected-route-component';
 
 const HomeRoute = () => {
   return (
     <Switch>
-      <Route exact path="/result">
-        <Result />
-      </Route>
-      <Route path="/view-result">
-        <ViewResult/>
-      </Route>
+      <ProtectedRoute
+        path="/result"
+        redirectRoute="/signin"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() => <Result />}
+        exact
+      />
+      <ProtectedRoute
+       path="/view-result"
+        redirectRoute="/signin"
+        guardFunction={() => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            return true;
+          } else {
+            return false;
+          }
+        }}
+        component={() =>  <ViewResult />}
+        exact
+      />
     </Switch>
   )
 }
