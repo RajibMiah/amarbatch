@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Button, Checkbox, Grid, makeStyles, Snackbar, TextField, Typography } from '@material-ui/core'
+import { Box, Button, CardMedia, Checkbox, Grid, makeStyles, Snackbar, TextField, Typography } from '@material-ui/core'
 // var  localStorage = require('localStorage');
-// import SigninSideBg from '../../../asset/SignInSideBg'
 import { useForm } from "react-hook-form";
 import logo from '../../../asset/logo.svg'
 import { useHistory } from 'react-router-dom'
@@ -26,7 +25,9 @@ const useStyle = makeStyles(theme => ({
       top: '-9px'
     }
   },
-
+  media:{
+    height:"100vh",
+  },
   logoProp: {
     height: '80px',
     paddingTop: '20px'
@@ -96,21 +97,14 @@ const Index = () => {
   };
 
 
-  useEffect(() => {
-
-    return () => {
-
-    }
-  }, [])
-
   return (
     <Grid container className={classes.root}>
       <Grid item xs={6}>
         {/* <SigninSideBg style= {{position:'absoulte', width:"500px"}}/> */}
-        <Box component='img'
-          src={SideBg}
-          alt='sideimg'
-          style={{ width: "650px", height: '650px' }}
+        <CardMedia
+          className={classes.media}
+          image={SideBg}
+          title="Paella dish"
         />
       </Grid>
       <Grid item container xs={6} style={{ textAlign: 'center' }}>
