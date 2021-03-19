@@ -4,6 +4,7 @@ import Cartoonimg from '../../../asset/cartoon.svg'
 import { BiLocationPlus } from "react-icons/bi";
 import { FcBusinessman } from "react-icons/fc";
 import { FcPhone } from "react-icons/fc";
+import { useHistory } from 'react-router';
 
 
 const useStyle = makeStyles(theme => ({
@@ -24,12 +25,24 @@ const useStyle = makeStyles(theme => ({
   },
   textField: {
     width: '100%'
+  },
+  btn: {
+    background: '#6396fc',
+    borderRadius: '25px',
+    fontWeight: 'bold',
+    color: 'white',
+    height: '40px',
+    width: '100px',
+    '& .MuiButton-root:hover':{
+      backgroundColor:'black'
+    }
   }
 
 }))
 
 const Index = () => {
   const classes = useStyle()
+  const history = useHistory()
   return (
     <Grid container>
       <Grid item >
@@ -60,8 +73,8 @@ const Index = () => {
 
       <Grid item xs></Grid>
       <Grid item >
-        <Button style={{ background: '#6396fc', borderRadius: '25px', fontWeight: 'bold', color: 'white', height: '40px', width: '100px' }}>
-          Edit
+        <Button onClick = {()=>{history.push('/profile')}}className = {classes.btn}>
+          save
         </Button>
       </Grid>
       <Grid item container>

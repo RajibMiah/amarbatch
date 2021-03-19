@@ -1,10 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import HomeIcon from '@material-ui/icons/Home';
-import ScheduleIcon from '@material-ui/icons/Schedule';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
+// import HomeIcon from '@material-ui/icons/Home';
+// import ScheduleIcon from '@material-ui/icons/Schedule';
+// import MenuBookIcon from '@material-ui/icons/MenuBook';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import PersonIcon from '@material-ui/icons/Person';
 import { useHistory } from "react-router-dom";
@@ -67,6 +68,11 @@ const useStyles = makeStyles((theme) => ({
       }
     }
   },
+  homeIcon: {
+    stroke: '#6396fc',
+    fontSize: "50px",
+    color: 'white'
+  },
   tabStyle: {
     background: 'black',
     borderRadius: '50%'
@@ -96,7 +102,7 @@ export default function VerticalTabs() {
         className={classes.tabs}
       >
         <Tab
-          icon={<HomeIcon style={{ color: 'white' }} />}
+          icon={<HomeOutlinedIcon className={classes.homeIcon} />}
           onClick={() => { history.push('/') }}
           {...a11yProps(0)}
         />

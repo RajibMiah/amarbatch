@@ -57,7 +57,7 @@ const Index = () => {
   const classes = useStyle()
   const history = useHistory()
   const [open, setOpen] = useState(false);
-  const [severity , setSeverity] = useState()
+  const [severity, setSeverity] = useState()
   const [message, setMessage] = useState()
   // const [values, setValues] = useState({ classId: '', password: '' })
   const { register, handleSubmit } = useForm();
@@ -75,7 +75,7 @@ const Index = () => {
           setMessage("You are sign in . Redireact to home page")
           setOpen(true);
           setTimeout(() => {
-            history.push('/')
+            history.push('/edit-profile')
           }, 2000);
 
         }

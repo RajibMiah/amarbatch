@@ -18,7 +18,6 @@ const useStyle = makeStyles(theme => ({
   btn: {
     background: '#6396fc',
     borderRadius: '25px',
-    // fontWeight: 'bold',
     textAlign: 'center',
     color: 'white',
     '& .MuiButton-root:hover':{
@@ -49,7 +48,6 @@ const Index = () => {
           As said by Edward Young, ‘procrastination is the thief of time’. The more the delay made to begin, the more time wasted. The secret to getting ahead is getting started. Set a timetable, adhere to it strictly and you will find things falling in place.
           Welcome to our batch website.Here you can find the important files and other important things about our batch.
           Be Our Guest.
-          
         </Typography>
       </Grid>
 
