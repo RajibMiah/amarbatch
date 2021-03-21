@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Box, Button, CardMedia, Checkbox, Grid, makeStyles, Snackbar, TextField, Typography } from '@material-ui/core'
-// var  localStorage = require('localStorage');
+import React, { useState} from 'react'
+import {  Button, CardMedia, Checkbox, Grid, makeStyles, Snackbar, TextField, Typography } from '@material-ui/core'
 import { useForm } from "react-hook-form";
 import logo from '../../../asset/logo.svg'
 import { useHistory } from 'react-router-dom'

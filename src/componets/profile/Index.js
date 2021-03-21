@@ -1,10 +1,11 @@
 import { Grid, Box, Typography, makeStyles, Button } from '@material-ui/core'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Cartoonimg from '../../asset/cartoon.svg'
 import { BiLocationPlus } from "react-icons/bi";
 import { FcBusinessman } from "react-icons/fc";
 import { FcPhone } from "react-icons/fc";
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import axios from 'axios';
 
 
 const useStyle = makeStyles(theme => ({
@@ -30,8 +31,8 @@ const useStyle = makeStyles(theme => ({
     color: 'white',
     height: '40px',
     width: '100px',
-    '& .MuiButton-root:hover':{
-      backgroundColor:'black'
+    '& .MuiButton-root:hover': {
+      backgroundColor: 'black'
     }
   }
 
@@ -39,7 +40,27 @@ const useStyle = makeStyles(theme => ({
 
 const Index = () => {
   const classes = useStyle()
+  const [profileData, setProfileData] = useState()
   const history = useHistory()
+
+  useEffect(() => {
+    axios({
+      method: 'GET',
+      url: 'http://localhost:4000/profile',
+      headers: {
+        Authorization: localStorage.getItem("authToken")
+      }
+    }).then(({ data: { data } }) => {
+      console.log("res", data)
+      setProfileData(data)
+    })
+      .catch(err => {
+        console.log("error =====>", err)
+      })
+    return () => {
+    }
+  }, [])
+
   return (
     <Grid container>
       <Grid item >
@@ -55,12 +76,15 @@ const Index = () => {
               color='secondary'
               style={{ fontWeight: 'bold', textAlign: 'left' }}
             >
-              Shahadin Mahamud
+             {profileData?.userName || 'Student'}
           </Typography>
             <Box component='ul' className={classes.ulStyle}>
               <li> <i><FcBusinessman /></i> BSc hons in cse</li>
-              <li><i><FcPhone /></i>+88 01715646 45</li>
-              <li><i><BiLocationPlus style={{ color: "green" }} /></i>Amborkhana,sylhet</li>
+              <li><i><FcPhone /></i> {profileData?.email|| "example@gmail.com"}</li>
+              <li><i><BiLocationPlus style={{ color: "green" }} />
+              </i>
+                  { profileData?.phoneNo || "Amborkhana,sylhet" }
+              </li>
             </Box>
 
           </Box>
@@ -70,7 +94,7 @@ const Index = () => {
 
       <Grid item xs></Grid>
       <Grid item >
-        <Button className = {classes.btn} onClick = {()=>{history.push('/edit-profile')}}>
+        <Button className={classes.btn} onClick={() => { history.push('/edit-profile') }}>
           Edit
         </Button>
       </Grid>
@@ -87,9 +111,13 @@ const Index = () => {
             variant='body1'
             style={{ lineHeight: '25px', fontWeight: 'bold', paddingBottom: '10px' }}
           >
-            The passage experienced a surge in popularity during the 1960s when Letraset used it on
-            their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
-            with their software. Today it's seen all around the web
+            {
+              profileData?.bio || 
+              `The passage experienced a surge in popularity during the 1960s when Letraset used it on 
+              their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with 
+              their software. Today it's seen all around the web`
+            }
+           
         </Typography>
         </Grid>
 
@@ -105,9 +133,12 @@ const Index = () => {
             variant='body1'
             style={{ lineHeight: '25px', fontWeight: 'bold', paddingBottom: '10px' }}
           >
-            The passage experienced a surge in popularity during the 1960s when Letraset used it on
-            their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
-            with their software. Today it's seen all around the web
+            {
+              profileData?.education ||   `The passage experienced a surge in popularity during the 1960s when Letraset used it on
+              their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text
+              with their software. Today it's seen all around the web`
+            }
+          
         </Typography>
         </Grid>
 
