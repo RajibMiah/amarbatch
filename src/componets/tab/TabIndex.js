@@ -23,6 +23,7 @@ import Profile from '../profile/Route'
 import TabPanel from './tabpanel/TabPanel'
 
 import Home from '../home/HomeRoute'
+import { Grid } from '@material-ui/core';
 
 function a11yProps(index) {
   return {
@@ -36,20 +37,23 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    height: 656,
+    height: "100vh",
     '& .MuiTabs-flexContainer': {
       background: '#6396FC',
       marginLeft: '15px',
       borderRadius: '25px',
-      height: '90%',
+      height: "98vh",
       position: 'relative',
-      top: '5%',
+      top: '1rem',
     },
 
   },
   tabs: {
     // borderRight: `1px solid ${theme.palette.divider}`,
-    width: '8%',
+    // width: '8%',
+    "& .MuiTabs-fixed":{
+       width:"90% !important"
+    },
     '& .MuiTab-wrapper': {
       height: '50px',
       width: "50%",
@@ -61,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .MuiTab-root': {
       margin: '10px',
-      minWidth: "0px !important",
+      minWidth: "10% !important",
       '&:hover': {
         background: 'black',
         borderRadius: '50%'
@@ -92,72 +96,81 @@ export default function VerticalTabs() {
 
   return (
     <div className={classes.root}>
-      <Tabs
-        orientation="vertical"
-        indicatorColor='#ffff'
-        // variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
-        className={classes.tabs}
-      >
-        <Tab
-          icon={<HomeOutlinedIcon className={classes.homeIcon} />}
-          onClick={() => { history.push('/') }}
-          {...a11yProps(0)}
-        />
-        <Tab
-          icon={<TimeIcon />}
-          onClick={() => { history.push('/routine') }}
-          {...a11yProps(1)}
-        />
-        <Tab
-          icon={<CourseIcon />}
-          onClick={() => { history.push('/courses') }}
-          {...a11yProps(2)}
-        />
-        <Tab
-          icon={<NoticeIcon />}
-          onClick={() => { history.push('/notice') }}
-          {...a11yProps(3)}
-        />
-        <Tab
-          icon={<ListAltIcon style={{ color: 'white' }} />}
-          onClick={() => { history.push('/result') }}
-          {...a11yProps(4)}
-        />
-        <Tab
-          icon={<AchivmentIcon />}
-          onClick={() => { history.push('/achivement') }}
-          {...a11yProps(5)}
-        />
-        <Tab
-          icon={<PersonIcon style={{ color: 'white' }} />}
-          onClick={() => { history.push('/profile') }}
-          {...a11yProps(6)}
-        />
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <Home />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Routine />
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Course />
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <Notification />
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <Result />
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        <Achivement />
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        <Profile />
-      </TabPanel>
+      <Grid container >
+        <Grid item xs={1}>
+          <Tabs
+            orientation="vertical"
+            indicatorColor='#ffff'
+            // variant="scrollable"
+            value={value}
+            onChange={handleChange}
+            aria-label="Vertical tabs example"
+            className={classes.tabs}
+          >
+            <Tab
+              icon={<HomeOutlinedIcon className={classes.homeIcon} />}
+              onClick={() => { history.push('/') }}
+              {...a11yProps(0)}
+            />
+            <Tab
+              icon={<TimeIcon />}
+              onClick={() => { history.push('/routine') }}
+              {...a11yProps(1)}
+            />
+            <Tab
+              icon={<CourseIcon />}
+              onClick={() => { history.push('/courses') }}
+              {...a11yProps(2)}
+            />
+            <Tab
+              icon={<NoticeIcon />}
+              onClick={() => { history.push('/notice') }}
+              {...a11yProps(3)}
+            />
+            <Tab
+              icon={<ListAltIcon style={{ color: 'white' }} />}
+              onClick={() => { history.push('/result') }}
+              {...a11yProps(4)}
+            />
+            <Tab
+              icon={<AchivmentIcon />}
+              onClick={() => { history.push('/achivement') }}
+              {...a11yProps(5)}
+            />
+            <Tab
+              icon={<PersonIcon style={{ color: 'white' }} />}
+              onClick={() => { history.push('/profile') }}
+              {...a11yProps(6)}
+            />
+          </Tabs>
+        </Grid>
+        <Grid item xs >
+          <TabPanel value={value} index={0}>
+            <Home />
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <Routine />
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <Course />
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <Notification />
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <Result />
+          </TabPanel>
+          <TabPanel value={value} index={5}>
+            <Achivement />
+          </TabPanel>
+          <TabPanel value={value} index={6}>
+            <Profile />
+          </TabPanel>
+        </Grid>
+      </Grid>
+
+
+
     </div>
   );
 }
