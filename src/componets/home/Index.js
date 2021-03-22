@@ -66,13 +66,13 @@ const Index = () => {
         </Grid>
         <Grid item xs={12} container justify='center'>
           <Grid item >
-            <CRProfile src={Cartoonimg} crname = 'Toha' bgColor='brown' />
+            <CRProfile src={Cartoonimg} crname = 'Ayan' bgColor='brown' />
           </Grid>
           <Grid item  >
-            <CRProfile src={Cartoonimg} crname = 'Atrazul' bgColor='#5FBEFF' />
+            <CRProfile src={Cartoonimg} crname = 'Prince' bgColor='#5FBEFF' />
           </Grid>
           <Grid item>
-            <CRProfile src={Cartoonimg}crname = 'Shishir ' bgColor='brown' />
+            <CRProfile src={Cartoonimg}crname = 'Dhiman' bgColor='brown' />
           </Grid>
           <Grid item >
             <CRProfile src={Cartoonimg} crname = 'Rizvi' bgColor='#5FBEFF' />

@@ -34,7 +34,7 @@ const Index = () => {
         <Header />
       </Grid>
       <Grid item xs={6} style={{ padding: '32px' }}>
-        <BGCourse style={{ position: 'relative', left: "-56px" }} />
+        <BGCourse style={{ position: 'relative', left: "-66px" }} />
       </Grid>
       <Grid item xs={6} className={classes.PTypo}>
         <Typography
